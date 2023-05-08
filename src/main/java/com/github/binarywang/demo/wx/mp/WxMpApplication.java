@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
 @SpringBootApplication
-public class WxMpDemoApplication {
+public class WxMpApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WxMpDemoApplication.class, args);
+        SpringApplication.run(WxMpApplication.class, args);
     }
 }
