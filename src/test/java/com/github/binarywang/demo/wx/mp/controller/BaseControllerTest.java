@@ -3,10 +3,6 @@ package com.github.binarywang.demo.wx.mp.controller;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeTest;
 
-import java.util.Base64;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
 /**
  * 公共测试方法和参数.
  *
