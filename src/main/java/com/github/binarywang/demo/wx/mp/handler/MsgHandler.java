@@ -2,6 +2,7 @@ package com.github.binarywang.demo.wx.mp.handler;
 
 import com.github.binarywang.demo.wx.mp.builder.TextBuilder;
 import com.github.binarywang.demo.wx.mp.utils.JsonUtils;
+import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
@@ -17,6 +18,7 @@ import static me.chanjar.weixin.common.api.WxConsts.XmlMsgType;
 /**
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
+@Slf4j
 @Component
 public class MsgHandler extends AbstractHandler {
 
@@ -27,6 +29,7 @@ public class MsgHandler extends AbstractHandler {
 
         if (!wxMessage.getMsgType().equals(XmlMsgType.EVENT)) {
             //TODO 可以选择将消息保存到本地
+            log.info("[MsgHandler][handle] message: {}", wxMessage);
         }
 
         //当用户输入关键词如“你好”，“客服”等，并且有客服在线时，把消息转发给在线客服
@@ -43,7 +46,8 @@ public class MsgHandler extends AbstractHandler {
         }
 
         //TODO 组装回复消息
-        String content = "收到信息内容：" + JsonUtils.toJson(wxMessage);
+        String content = "欢迎来到Linda的微信公众号";
+//        String content = "收到信息内容：" + JsonUtils.toJson(wxMessage);
 
         return new TextBuilder().build(content, wxMessage, weixinService);
 
